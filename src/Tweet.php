@@ -12,5 +12,6 @@ class Tweet
         public string $username,
         public string $html,
         public DateTimeImmutable $date,
-    ) {}
+    ) {
+    }
 }

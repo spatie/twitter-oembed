@@ -6,7 +6,7 @@ use Spatie\TwitterOEmbed\TwitterOEmbed;
 // prove to be brittle because the author name and username could change any
 // time.
 test('it can embed a tweet', function () {
-    expect((new TwitterOEmbed)->embed('https://twitter.com/AoDespair/status/1173718972103090177'))
+    expect((new TwitterOEmbed())->embed('https://twitter.com/AoDespair/status/1173718972103090177'))
         ->url->toBe('https://twitter.com/AoDespair/status/1173718972103090177')
         ->name->toBe('David Simon')
         ->username->toBe('@AoDespair')
