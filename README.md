@@ -1,24 +1,17 @@
-# :package_description
+# Retrieve tweets with the Twitter oEmbed API
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/vendor_slug/package_slug.svg?style=flat-square)](https://packagist.org/packages/vendor_slug/package_slug)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/vendor_slug/package_slug/run-tests?label=tests)](https://github.com/vendor_slug/package_slug/actions?query=workflow%3ATests+branch%3Amaster)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/vendor_slug/package_slug/Check%20&%20fix%20styling?label=code%20style)](https://github.com/vendor_slug/package_slug/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/vendor_slug/package_slug.svg?style=flat-square)](https://packagist.org/packages/vendor_slug/package_slug)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/twitter-oembed.svg?style=flat-square)](https://packagist.org/packages/spatie/twitter-oembed)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/twitter-oembed/run-tests?label=tests)](https://github.com/spatie/twitter-oembed/actions?query=workflow%3ATests+branch%3Amaster)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/spatie/twitter-oembed/Check%20&%20fix%20styling?label=code%20style)](https://github.com/spatie/twitter-oembed/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/spatie/twitter-oembed.svg?style=flat-square)](https://packagist.org/packages/spatie/twitter-oembed)
 
----
-This package can be used as to scaffold a framework agnostic package. Follow these steps to get started:
+This is a utility package to retrieve tweets with Twitter's [oEmbed API](https://developer.twitter.com/en/docs/twitter-for-websites/oembed-api). You don't need to set up an account for Twitter's oEmbed API, but it's only able to retrieve a stripped down version of a tweet and its data.
 
-1. Press the "Use template" button at the top of this repo to create a new repo with the contents of this skeleton
-2. Run "./configure.sh" to run a script that will replace all placeholders throughout all the files
-3. Have fun creating your package.
-4. If you need help creating a package, consider picking up our <a href="https://laravelpackage.training">Laravel Package Training</a> video course.
----
-
-This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
+This could be useful to set up a package that embeds Tweets in markdown or emails without using a JavaScript embedder.
 
 ## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/:package_name.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/:package_name)
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/twitter-oembed.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/twitter-oembed)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
@@ -29,14 +22,32 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require vendor_slug/package_slug
+composer require spatie/twitter-oembed
 ```
 
 ## Usage
 
 ```php
-$skeleton = new VendorName\Skeleton();
-echo $skeleton->echoPhrase('Hello, VendorName!');
+$twitterOEmbed = new Spatie\TwitterOEmbed\TwitterOEmbed();
+
+$url = 'https://twitter.com/AoDespair/status/1173718972103090177';
+
+$tweet = $twitterOEmbed->embed($url);
+
+echo $tweet->url;
+// "https://twitter.com/AoDespair/status/1173718972103090177"
+
+echo $tweet->name;
+// "David Simon"
+
+echo $tweet->username;
+// "@AoDespair"
+
+echo $tweet->html;
+// "<p>Have I seen The Wire?</p>"
+
+echo $tweet->date;
+// 2019-09-16
 ```
 
 ## Testing
@@ -59,7 +70,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [Sebastian De Deyne](https://github.com/sebastiandedeyne)
 - [All Contributors](../../contributors)
 
 ## License
