@@ -5,9 +5,11 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/spatie/twitter-oembed/Check%20&%20fix%20styling?label=code%20style)](https://github.com/spatie/twitter-oembed/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/twitter-oembed.svg?style=flat-square)](https://packagist.org/packages/spatie/twitter-oembed)
 
-This is a utility package to retrieve tweets with Twitter's [oEmbed API](https://developer.twitter.com/en/docs/twitter-for-websites/oembed-api). You don't need to set up an account for Twitter's oEmbed API, but it's only able to retrieve a stripped down version of a tweet and its data.
+A utility package to retrieve tweets with Twitter's [oEmbed API](https://developer.twitter.com/en/docs/twitter-for-websites/oembed-api). The main benefit of Twitter's oEmbed API is that it's public. You don't need to set up a developer account to get started, but the data in the response is minimal.
 
-This could be useful to set up a package that embeds Tweets in markdown or emails without using a JavaScript embedder.
+This package is meant to set the stage for tools that embed Tweets. For example, a markdown plugin that embeds tweets as static HTML so your blog doesn't need a bloated JavaScript widget. Or a rich text editor plugin for your email platform so tweets can be embedded in newsletters, like Substack does.
+
+It's still in an experimental stage, I'm not sure what direction this is going to go yet. I don't think it's valuable enough as long as it doesn't support displaying basic data like an image or quoted tweet, which the oEmbed API doesn't return by default.
 
 ## Support us
 
@@ -28,11 +30,9 @@ composer require spatie/twitter-oembed
 ## Usage
 
 ```php
-$twitterOEmbed = new Spatie\TwitterOEmbed\TwitterOEmbed();
-
-$url = 'https://twitter.com/AoDespair/status/1173718972103090177';
-
-$tweet = $twitterOEmbed->embed($url);
+$tweet = (new TwitterOEmbed())->embed(
+    'https://twitter.com/AoDespair/status/1173718972103090177'
+);
 
 echo $tweet->url;
 // "https://twitter.com/AoDespair/status/1173718972103090177"
@@ -49,6 +49,11 @@ echo $tweet->html;
 echo $tweet->date;
 // 2019-09-16
 ```
+
+## Alternatives
+
+- **[j7mbo/twitter-api-php](https://github.com/J7mbo/twitter-api-php):** A Twitter API wrapper. This returns a lot more data, but requires a developer account.
+- **[embed/embed](https://github.com/oscarotero/Embed):** A generic oEmbed package. This supports retrieving oEmbed data from any source, like YouTube or Wikipedia. `spatie/twitter-oembed` aims to add Twitter specific features like parsing the tweet's date and author metadata.
 
 ## Testing
 

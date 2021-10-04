@@ -24,6 +24,10 @@ test('it can parse HTML from a tweet with an image')
     ->expect($parser->parse(require 'data/tweet-with-image.php'))
     ->html->toBe('<p>One of my favorites <a href="https://t.co/CFFyAvPRXD">pic.twitter.com/CFFyAvPRXD</a></p>');
 
+test('it can parse HTML from a tweet with a quote')
+    ->expect($parser->parse(require 'data/tweet-with-quote.php'))
+    ->html->toBe('<p>Another practical example of "allow all, bless some" <a href="https://t.co/YOQRtP5qSe">https://t.co/YOQRtP5qSe</a></p>');
+
 test('it can parse a date from a simple tweet')
     ->expect($parser->parse(require 'data/simple-tweet.php'))
     ->date->toBeDate('2019-09-16');
