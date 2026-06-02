@@ -1,8 +1,8 @@
 # Retrieve tweets with the Twitter oEmbed API
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/twitter-oembed.svg?style=flat-square)](https://packagist.org/packages/spatie/twitter-oembed)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/twitter-oembed/run-tests?label=tests)](https://github.com/spatie/twitter-oembed/actions?query=workflow%3ATests+branch%3Amaster)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/spatie/twitter-oembed/Check%20&%20fix%20styling?label=code%20style)](https://github.com/spatie/twitter-oembed/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
+[![GitHub Tests Action Status](https://github.com/spatie/twitter-oembed/actions/workflows/run-tests.yml/badge.svg)](https://github.com/spatie/twitter-oembed/actions?query=workflow%3ATests+branch%3Amaster)
+[![GitHub Code Style Action Status](https://github.com/spatie/twitter-oembed/actions/workflows/php-cs-fixer.yml/badge.svg)](https://github.com/spatie/twitter-oembed/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/twitter-oembed.svg?style=flat-square)](https://packagist.org/packages/spatie/twitter-oembed)
 
 A utility package to retrieve tweets with Twitter's [oEmbed API](https://developer.twitter.com/en/docs/twitter-for-websites/oembed-api). The main benefit of Twitter's oEmbed API is that it's public. You don't need to set up a developer account to get started, but the data in the response is minimal.
