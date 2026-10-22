@@ -13,7 +13,7 @@ It's still in an experimental stage, I'm not sure what direction this is going t
 
 ## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/twitter-oembed.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/twitter-oembed)
+[<img src="https://spatie.be/github-ad-image/twitter-oembed.jpg" width="419px" />](https://spatie.be/github-ad-click/twitter-oembed)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
